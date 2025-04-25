@@ -27,7 +27,9 @@ export default function HaberDetay({ haber }) {
           <>
             <meta
               property="og:image"
-              content={haber.postimage[0].uploaded_image.image}
+              content={`${baseUrl}/api/image-proxy?url=${encodeURIComponent(
+                haber.postimage[0].uploaded_image.image
+              )}`}
             />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="630" />
