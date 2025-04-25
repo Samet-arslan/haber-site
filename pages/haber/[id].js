@@ -22,16 +22,19 @@ export default function HaberDetay({ haber }) {
         <meta name="description" content={haber.sub_header || ""} />
         <meta property="og:title" content={haber.header} />
         <meta property="og:description" content={haber.sub_header || ""} />
+
         {haber.postimage && haber.postimage.length > 0 && (
-          <meta
-            property="og:image"
-            content={haber.postimage[0].uploaded_image.image}
-          />
+          <>
+            <meta
+              property="og:image"
+              content={haber.postimage[0].uploaded_image.image}
+            />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
+          </>
         )}
-        <meta
-          property="og:url"
-          content={`${baseUrl}/haber/${haber.id}`}
-        />
+
+        <meta property="og:url" content={`${baseUrl}/haber/${haber.id}`} />
         <meta property="og:type" content="article" />
       </Head>
 
