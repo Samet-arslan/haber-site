@@ -75,7 +75,7 @@ export default function HaberDetay({ haber }) {
             fontWeight: "bold",
           }}
         >
-          Facebook'ta Paylaş
+          Facebook&apos;ta Paylaş
         </a>
       </article>
     </>
