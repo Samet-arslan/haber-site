@@ -43,6 +43,7 @@ export default function HaberDetay({ haber }) {
       <article style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
         <h1>{haber.header}</h1>
         <p>{haber.sub_header}</p>
+
         {haber.postimage && haber.postimage.length > 0 && (
           <img
             src={haber.postimage[0].uploaded_image.image}
@@ -55,6 +56,27 @@ export default function HaberDetay({ haber }) {
             }}
           />
         )}
+
+        {/* 🚀 Facebook Paylaşım Butonu */}
+        <a
+          href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+            `${baseUrl}/haber/${haber.id}`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-block",
+            padding: "10px 20px",
+            backgroundColor: "#1877f2",
+            color: "#fff",
+            borderRadius: "5px",
+            textDecoration: "none",
+            marginTop: "20px",
+            fontWeight: "bold",
+          }}
+        >
+          Facebook'ta Paylaş
+        </a>
       </article>
     </>
   );
