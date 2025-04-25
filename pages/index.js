@@ -17,6 +17,7 @@ export default function Home({ haberler }) {
   return (
     <>
       <Head>
+        {/* test */}
         <title>Haber Sitesi | Güncel Haberler</title>
         <meta name="description" content="Kıbrıs ve dünyadan son dakika güncel haberler burada!" />
         <meta property="og:title" content="Haber Sitesi | Güncel Haberler" />
