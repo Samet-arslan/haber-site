@@ -19,6 +19,8 @@ export default function HaberDetay({ haber }) {
     <>
       <Head>
         <title>{haber.header} | Haber Sitesi</title>
+
+        {/* Twitter Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={haber.header} />
         <meta name="twitter:description" content={haber.sub_header || ""} />
@@ -29,10 +31,10 @@ export default function HaberDetay({ haber }) {
           )}`}
         />
 
+        {/* Open Graph Meta Tags */}
         <meta name="description" content={haber.sub_header || ""} />
         <meta property="og:title" content={haber.header} />
         <meta property="og:description" content={haber.sub_header || ""} />
-
         {haber.postimage && haber.postimage.length > 0 && (
           <>
             <meta
@@ -45,7 +47,6 @@ export default function HaberDetay({ haber }) {
             <meta property="og:image:height" content="630" />
           </>
         )}
-
         <meta property="og:url" content={`${baseUrl}/haber/${haber.id}`} />
         <meta property="og:type" content="article" />
       </Head>
@@ -72,7 +73,7 @@ export default function HaberDetay({ haber }) {
           {/* Facebook Share */}
           <a
             href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-              haberUrl
+              `${baseUrl}/haber/${haber.id}`
             )}`}
             target="_blank"
             rel="noopener noreferrer"
@@ -92,7 +93,7 @@ export default function HaberDetay({ haber }) {
           {/* Twitter Share */}
           <a
             href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
-              haberUrl
+              `${baseUrl}/haber/${haber.id}`
             )}&text=${encodeURIComponent(haber.header)}`}
             target="_blank"
             rel="noopener noreferrer"
