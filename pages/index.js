@@ -31,7 +31,7 @@ export default function Home({ haberler }) {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={baseUrl} />
 
-        {/* OG Görsel bilgileri */}
+        {/* OG IMG infos */}
         <meta property="og:image" content={`${baseUrl}/default-og-image.jpg`} />
         <meta property="og:image:width" content="1890" />
         <meta property="og:image:height" content="912" />

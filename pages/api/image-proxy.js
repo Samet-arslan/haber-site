@@ -14,7 +14,7 @@ export default async function handler(req, res) {
       return res.status(response.status).send("Image fetch error");
     }
 
-    // İçerik tipi (JPEG, PNG vs.) ne ise onu aynen iletelim
+    // İçerik tipi (JPEG, PNG vs.) ne ise onu aynen iletmk gerekiyr
     res.setHeader("Content-Type", response.headers.get("Content-Type"));
     const buffer = await response.arrayBuffer();
     res.send(Buffer.from(buffer));

@@ -19,6 +19,16 @@ export default function HaberDetay({ haber }) {
     <>
       <Head>
         <title>{haber.header} | Haber Sitesi</title>
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={haber.header} />
+        <meta name="twitter:description" content={haber.sub_header || ""} />
+        <meta
+          name="twitter:image"
+          content={`${baseUrl}/api/image-proxy?url=${encodeURIComponent(
+            haber.postimage[0]?.uploaded_image?.image
+          )}`}
+        />
+
         <meta name="description" content={haber.sub_header || ""} />
         <meta property="og:title" content={haber.header} />
         <meta property="og:description" content={haber.sub_header || ""} />
@@ -57,7 +67,7 @@ export default function HaberDetay({ haber }) {
           />
         )}
 
-        {/* 🚀 Facebook Paylaşım Butonu */}
+        {/* Facebook Share */}
         <a
           href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
             `${baseUrl}/haber/${haber.id}`
