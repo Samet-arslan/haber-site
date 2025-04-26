@@ -67,26 +67,48 @@ export default function HaberDetay({ haber }) {
           />
         )}
 
-        {/* Facebook Share */}
-        <a
-          href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-            `${baseUrl}/haber/${haber.id}`
-          )}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: "inline-block",
-            padding: "10px 20px",
-            backgroundColor: "#1877f2",
-            color: "#fff",
-            borderRadius: "5px",
-            textDecoration: "none",
-            marginTop: "20px",
-            fontWeight: "bold",
-          }}
-        >
-          Facebook&apos;ta Paylaş
-        </a>
+        {/* Share Buttons */}
+        <div style={{ marginTop: "20px", display: "flex", gap: "10px" }}>
+          {/* Facebook Share */}
+          <a
+            href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+              haberUrl
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-block",
+              padding: "10px 20px",
+              backgroundColor: "#1877f2",
+              color: "#fff",
+              borderRadius: "5px",
+              textDecoration: "none",
+              fontWeight: "bold",
+            }}
+          >
+            Facebook&apos;ta Paylaş
+          </a>
+
+          {/* Twitter Share */}
+          <a
+            href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
+              haberUrl
+            )}&text=${encodeURIComponent(haber.header)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-block",
+              padding: "10px 20px",
+              backgroundColor: "#1DA1F2",
+              color: "#fff",
+              borderRadius: "5px",
+              textDecoration: "none",
+              fontWeight: "bold",
+            }}
+          >
+            Twitter&apos;da Paylaş
+          </a>
+        </div>
       </article>
     </>
   );
